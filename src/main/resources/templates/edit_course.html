@@ -1,0 +1,44 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous"></head>
+<body>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        
+        <a class="navbar-brand" th:href="@{/getcourses}">Back</a>
+      
+      </nav>
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">UpdateCourse</h1>
+            <div class="card-body">
+                <form th:action="@{/getcourses/{id} (id=${course.courseid})}" th:object="${course}" method="post">
+                    <div class="form-group">
+                        <label>Course name</label>
+                        <input type="text" name="coursename" th:field="*{coursename}" class="form-control" placeholder="Enter Course Name">
+
+                        <label>Course duration</label>
+                        <input type="text" name="duration" th:field="*{duration}" class="form-control" placeholder="Enter Course duration">
+
+                        <label>Course status</label>
+                        <input type="text" name="status" th:field="*{status}" class="form-control" placeholder="Enter Course status">
+
+                    </div>
+                    
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
